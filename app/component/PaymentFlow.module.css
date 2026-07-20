@@ -1,0 +1,263 @@
+/* ---------------------------------------------------------
+   Layout wrapper (demo page background)
+--------------------------------------------------------- */
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(to bottom right, #f8fafc, #eef2ff);
+}
+
+/* ---------------------------------------------------------
+   Phone shell (shared card container)
+--------------------------------------------------------- */
+
+.phone {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 2rem;
+  background: #ffffff;
+  box-shadow: 0 20px 60px -15px rgba(79, 70, 229, 0.35);
+  border: 1px solid #f1f5f9;
+  padding: 24px 24px 32px;
+}
+
+/* ---------------------------------------------------------
+   Header
+--------------------------------------------------------- */
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #487fcc;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.backButton:hover {
+  background-color: #f8fafc;
+}
+
+.backButton:active {
+  transform: scale(0.95);
+}
+
+.title {
+  font-size:1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+
+}
+
+/* ---------------------------------------------------------
+   Money illustration
+--------------------------------------------------------- */
+
+.moneyWrap {
+  margin-bottom: 24px;
+}
+
+.moneyIllustration {
+  height: 112px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   Form
+--------------------------------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: block;
+}
+
+.fieldLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #121213;
+}
+
+.input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: rgba(248, 250, 252, 0.7);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.input::placeholder {
+  font-weight: 700;
+  color: #37383a;
+}
+
+.input:focus {
+  border-color: #818cf8;
+  background: #ffffff;
+}
+
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: rgba(248, 250, 252, 0.7);
+  padding: 12px 16px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.amountRow:focus-within {
+  border-color: #818cf8;
+  background: #ffffff;
+}
+
+.currencyPrefix {
+  font-size: 15px;
+  font-weight: 800;
+  color: #2e2f30;
+}
+
+.amountInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1e293b;
+  outline: none;
+  padding: 0;
+}
+
+.amountInput::placeholder {
+  font-weight: 700;
+  color: #19191a;
+}
+
+/* ---------------------------------------------------------
+   Buttons
+--------------------------------------------------------- */
+
+.primaryButton {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.primaryButton:hover {
+  filter: brightness(1.05);
+}
+
+.primaryButton:active {
+  transform: scale(0.98);
+}
+
+.payButton {
+  margin-top: 32px;
+}
+
+.secondaryButton {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  background: #ffffff;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #eef2ff;
+}
+
+.secondaryButton:active {
+  transform: scale(0.98);
+}
+
+/* ---------------------------------------------------------
+   Success screen
+--------------------------------------------------------- */
+
+.successTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.cat {
+  height: 176px;
+  width: 176px;
+}
+
+.successTitle {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.successText {
+  margin-top: 8px;
+  max-width: 240px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+.successActions {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
