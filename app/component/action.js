@@ -42,7 +42,7 @@ export const confirmPayment = async (prevState, formData)=>{
   try {
 
     const response = await fetch(
-      "http://localhost:8090/api/transactions/confirm",
+      "https://vendix-pos-application-api.onrender.com/api/transactions/confirm",
       {
         method: "PUT",
         headers:{
