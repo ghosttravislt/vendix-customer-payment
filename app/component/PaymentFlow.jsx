@@ -7,7 +7,8 @@ import Form from "next/form";
 import styles from "./PaymentFlow.module.css";
 import { confirmPayment } from "./action.js";
 import { useActionState } from "react";
-
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 /* ---------------------------------------------------------
    Shared bits
 --------------------------------------------------------- */
@@ -24,6 +25,7 @@ function PhoneShell({ children }) {
 
 function MoneyIllustration() {
   return (
+    
     <svg
       viewBox="0 0 200 140"
       className={styles.moneyIllustration}
@@ -133,12 +135,18 @@ export function PaymentScreen({ onSuccess }) {
  const [state, formAction, isPending] = useActionState(confirmPayment, null);
 
   useEffect(()=>{
+    if (!state) return;
   if(state?.success){
     onSuccess()
+    toast.success("payment successfull")
+  }
+  else{
+    toast.error("payment failed")
   }
 },[state, onSuccess])
 
-  return (
+  return (<>
+  <Toaster/>
     <PhoneShell>
       {/* Header */}
       <div className={styles.header}>
@@ -177,6 +185,7 @@ export function PaymentScreen({ onSuccess }) {
           type="submit"
           disabled={isPending}
           className={`${styles.primaryButton} ${styles.payButton}`}
+          
         >
           {isPending ? "Processing..." : "Pay Now"}
         </button>
@@ -184,6 +193,7 @@ export function PaymentScreen({ onSuccess }) {
 
       {/* Pay button */}
     </PhoneShell>
+    </>
   );
 }
 
